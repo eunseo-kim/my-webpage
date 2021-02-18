@@ -5,7 +5,7 @@
 body {
   margin: 0 auto; /*위 아래는 0, 좌우는 중앙으로*/
   color: rgb(12, 12, 12);
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .inner {
@@ -13,16 +13,18 @@ body {
   height: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  overflow: hidden;
 }
 
 header {
   width: 100%;
   height: 60px;
-  background-color: rgb(255, 241, 246);
+  background-color: rgb(255, 255, 255);
   position: fixed; /* 스크롤과 무관하게 항상 위치가 고정 */
   top: 0;
   left: 0;
   z-index: 1000; /* position 속성이 설정된 엘리먼트 중 최상단에 위치하도록 */
+  box-shadow: 10px 10px 10px -5px rgba(68, 68, 68, 0.1);
 }
 
 .head-container {
@@ -31,6 +33,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
 }
 
 a {
@@ -50,22 +53,15 @@ a:visited {
 /* 마우스 올라갔을 때: hover */
 a:hover {
   text-decoration: none;
-  color: rgb(12, 12, 12);
+  color: rgb(0, 0, 0);
 }
 
 .head-container .head-left {
+  padding: 4px 8px;
+  border-radius: 50px;
+  background-color: rgb(255, 246, 252);
   font-weight: bold;
   font-size: 1.2rem; /*rem: 웹 브라우저에서 설정된 폰트가 기준*/
-}
-
-.head-container .head-left a:hover {
-  color: #190127;
-  cursor: pointer;
-}
-
-.head-container .head-right a:hover {
-  color: #190127;
-  cursor: pointer;
 }
 
 .head-container .head-mid {
@@ -74,8 +70,21 @@ a:hover {
 }
 
 .head-container .head-right {
+  padding: 4px 8px;
+  border-radius: 50px;
+  background-color: rgb(255, 246, 252);
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.head-container .head-left a:hover {
+  color: rgb(80, 80, 80);
+  cursor: pointer;
+}
+
+.head-container .head-right a:hover {
+  color: rgb(80, 80, 80);
+  cursor: pointer;
 }
 
 section {
@@ -89,12 +98,10 @@ section {
   background-image: url("https://cdn.pixabay.com/photo/2015/08/17/18/23/balloons-892806_1280.jpg");
   /* background-color: rgb(255, 241, 246);
   opacity: 0.8; */
-  background-repeat: no-repeat;
-  background-size: cover; /* 이미지 반복 없애기 */
-  background-position: center 50%; /* 이미지 보이는 부분 설정 */
+  background-repeat: no-repeat; /* 이미지 반복 없애기 */
+  background-size: cover;
+  background-position: center 57%; /* 이미지 보이는 부분 설정 */
   z-index: 1;
-
-  margin-bottom: 2rem;
 }
 
 .main-container {
@@ -126,7 +133,7 @@ section {
   font-size: 2rem;
   font-weight: normal;
   line-height: 2rem;
-  font-family: "Do Hyeon", sans-serif;
+  font-family: "Poor Story", cursive;
 }
 
 .skill-container {
@@ -135,15 +142,16 @@ section {
   display: flex;
   justify-content: space-around; /* 내부에 각 요소들이 균등하게 떨어져 있음 */
   align-items: center;
+  padding: 1rem 0;
 }
 
 .skill {
   width: 25%;
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(252, 252, 252);
   display: flex;
   align-items: center;
   border-radius: 9px;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   margin: 0 1rem;
   box-shadow: 10px 10px 10px -5px rgb(90, 90, 90, 0.2);
 }
@@ -178,11 +186,123 @@ section {
 }
 
 .python-style {
-  color: rgb(209, 136, 113);
+  color: rgb(253, 138, 103);
 }
 
 .school-style {
-  color: rgb(223, 236, 123);
+  color: rgb(218, 235, 88);
+}
+
+.roadmap-container {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.roadmap-title-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.roadmap-title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #000000;
+}
+
+.slide-prev {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #000;
+}
+
+.slide-next {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #cfd8dc;
+}
+
+.arrow-container {
+  display: flex;
+}
+
+.class-list {
+  display: flex;
+  list-style: none; /*이걸 해도 사실 margin, padding값은 사라지지 않음*/
+  padding: 0;
+  padding: 1rem 0;
+  overflow: hidden;
+}
+
+.class-card {
+  width: 240px; /*viewport 사이즈와 상관없이 사이즈 고정하는게 더 이쁨*/
+  min-width: 240px; /*길이가 줄어들지 않음*/
+  box-shadow: 10px 10px 10px -5px rgb(90, 90, 90, 0.2);
+  border-radius: 8px;
+  margin: 0 10px;
+}
+
+.class-image {
+  width: 100%; /*240px으로 고정됨*/
+  height: 160px;
+  border-radius: 8px 8px 0 0;
+}
+
+.class-container {
+  width: 100%;
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+.class-skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.class-type {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+
+.class-format {
+  color: rgb(83, 83, 83);
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.3rem;
+}
+
+.class-desc {
+  width: 100%;
+  margin-top: 0.2rem;
+}
+
+.class-title {
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 0.4rem;
+  padding-bottom: 0.5rem;
+}
+
+.class-detail {
+  font-size: 0.8rem;
+  color: rgb(80, 80, 80);
+  width: 100%;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  height: 4;
+  line-height: 1.4;
 }
 
 /* 최대 화면 사이즈 기준이 1200px */
