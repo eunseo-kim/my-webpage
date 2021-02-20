@@ -59,7 +59,6 @@ a:hover {
 .head-container .head-left {
   padding: 4px 8px;
   border-radius: 50px;
-  background-color: rgb(245, 245, 245);
   font-weight: bold;
   font-size: 1.2rem; /*rem: 웹 브라우저에서 설정된 폰트가 기준*/
 }
@@ -72,7 +71,6 @@ a:hover {
 .head-container .head-right {
   padding: 4px 8px;
   border-radius: 50px;
-  background-color: rgb(245, 245, 245);
   font-weight: bold;
   font-size: 1.2rem;
 }
@@ -155,6 +153,11 @@ section {
   padding: 0.8rem 1rem;
   margin: 0 1rem;
   box-shadow: 10px 10px 10px -5px rgb(90, 90, 90, 0.2);
+  transition: 0.4s;
+}
+.skill:hover {
+  box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.2);
+  transform: translate(0, -5px);
 }
 
 .skill-icon {
@@ -241,6 +244,12 @@ section {
   box-shadow: 10px 10px 10px -5px rgb(90, 90, 90, 0.2);
   border-radius: 8px;
   margin: 0 10px;
+  transition: 0.4s;
+}
+
+.class-card:hover {
+  box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.2);
+  transform: translate(0, -5px);
 }
 
 .class-image {
@@ -304,6 +313,42 @@ section {
   -webkit-box-orient: vertical;
   height: 4;
   line-height: 1.4;
+}
+
+footer {
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(245, 245, 245);
+}
+
+.footer-icon {
+  display: flex;
+  padding: 0.5rem 0;
+  margin: 2rem 0 0 0;
+  font-size: 1.4rem;
+  border-bottom: 1px solid rgb(182, 182, 182);
+}
+.footer-icon__github {
+  padding-right: 0.5rem;
+}
+
+.footer-icon__velog {
+  padding-right: 0.5rem;
+}
+.footer-icon__github:hover {
+  cursor: pointer;
+}
+.footer-icon__velog:hover {
+  cursor: pointer;
+}
+.footer-icon__email:hover {
+  cursor: pointer;
+}
+
+.footer-copyright {
+  padding-top: 0.5rem;
+  font-size: 0.6rem;
+  color: rgb(83, 83, 83);
 }
 
 /* 최대 화면 사이즈 기준이 1200px */
